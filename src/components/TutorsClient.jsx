@@ -130,7 +130,7 @@ const TutorsClient = ({ teachers }) => {
           <p style={{ color: "#9ca3af", fontSize: "14px" }}>No tutors found. Try different filters.</p>
           <button onClick={handleReset} style={{ marginTop: "12px", color: "#9333ea", fontSize: "13px", fontWeight: "600", background: "none", border: "none", cursor: "pointer" }}>
             Clear filters
-          </button>
+          </butt
         </div>
       )}
 
