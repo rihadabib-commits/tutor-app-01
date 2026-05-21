@@ -45,7 +45,7 @@ const AllTutorPage = async () => {
             <TutorCard key={teacher._id} teacher={teacher} />
           ))
         ) : (
-          <p>No tutors found</p>
+          <p>No tutors found
         )}
       </div>
     </div>
