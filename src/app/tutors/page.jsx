@@ -52,4 +52,4 @@ const AllTutorPage = async () => {
   );
 };
 
-export default AllTutor
+export default AllTutorPage;
