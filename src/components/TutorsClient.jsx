@@ -138,4 +138,4 @@ const TutorsClient = ({ teachers }) => {
   );
 };
 
-export default TutorsClient;
+export default TutorsCli
