@@ -77,4 +77,4 @@ const Wahid = async () => {
   );
 };
 
-export default Wahid;
+export default Wahi
