@@ -1,94 +1,6 @@
 
 
 
-// import { BookingCard } from '@/components/Bookingcard';
-// import { auth } from '@/lib/auth';
-// import { Button } from '@heroui/react';
-// import { headers } from 'next/headers';
-// import Image from 'next/image';
-// import React from 'react';
-
-// const DetealsPage =async ({params}) => {
-
-//     const {id} = await params;
-
-
-//     const {token}= await auth.api.getToken({
-//       headers: await headers()
-//     })
- 
-
-//       const res = await fetch(`http://localhost:5000/teachers/${id}`,{
-//         headers: {
-//           authorization: `Bearer ${token}`
-//         }
-//       }
-       
-//       )
-//       const teacher = await res.json()
-
-//       const { _id, description, imageUrl, Name, price, category, sessionStartDate } = teacher;
-
-  
-
-//     console.log(teacher)
-//     return (
-
-
-
-
-     
-//         <div className='flex max-w-7xl mx-auto p-10 gap-10'>
-          
-//         <div className=' '>
-//             <Image
-            
-//                 alt={Name}
-//                 src={imageUrl}
-//                 height={400}
-//                 width={400}
-            
-//             />
-//         </div>
-
-
-
-
-
-//               <div className="mt-4 p-2">
-
-//         <h2 className="text-xl font-bold">{Name}</h2>
-
-//         <div className="text-gray-500 font-bold">{category}</div>
-
-//         <div className="text-sm mt-2">
-//           Session Start Date: {sessionStartDate}
-//         </div>
-//         <div className="text-sm mt-2">
-//               Institute:{description}
-//         </div>
-
-//         <div className="text-sm">
-//           Available: Sun - Thu 5:00 PM - 8:00 PM
-//         </div>
-
-//         <div className="font-semibold mt-2">
-//           Fee: ৳{price}/hr
-//         </div>
-      
-//             <BookingCard  tutor={teacher}  />
-//       </div>
-
-
-
-
-//         </div>
-//     );
-// };
-
-// export default DetealsPage
-
-
 
 import { auth } from '@/lib/auth';
 import { headers } from 'next/headers';
@@ -102,7 +14,7 @@ const DetealsPage = async ({ params }) => {
     headers: await headers()
   });
 
-  const res = await fetch(`http://localhost:5000/teachers/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/teachers/${id}`, {
     headers: { authorization: `Bearer ${token}` }
   });
 
@@ -289,3 +201,4 @@ const DetealsPage = async ({ params }) => {
 };
 
 export default DetealsPage;
+

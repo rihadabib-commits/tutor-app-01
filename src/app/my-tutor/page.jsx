@@ -277,7 +277,7 @@ const AllTutorPage = () => {
   const [editingTeacher, setEditingTeacher] = useState(null);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/teachers', { cache: 'no-store' })
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}teachers`, { cache: 'no-store' })
       .then(res => res.json())
       .then(data => setTeachers(data))
       .catch(err => console.log("Fetch error:", err));

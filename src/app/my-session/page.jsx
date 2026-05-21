@@ -137,7 +137,7 @@ const BookingSession = async () => {
     );
   }
 
-  const res = await fetch(`http://localhost:5000/booking/${user.id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/booking/${user.id}`, {
     cache: "no-store",
   });
 

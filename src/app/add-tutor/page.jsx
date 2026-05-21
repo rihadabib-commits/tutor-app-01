@@ -17,9 +17,12 @@ const TutorPage = () => {
         e.preventDefault();
 
         const {data:tokenData} = await authClient.token();
-        const fromData = new FormData(e.currentTarget);
+        // const fromData = new FormData(e.currentTarget);
+
+        const form = e.target;
+const fromData = new FormData(form);
         const tuttor = Object.fromEntries(fromData.entries());
-        const res = await fetch('http://localhost:5000/teachers', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/teachers`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(tuttor),
@@ -188,7 +191,13 @@ const TutorPage = () => {
 
                         {/* Submit */}
                         <button
-                            type="submit"
+                        
+                              type="submit"
+  onClick={(e) => {
+    // ✅ prevent weird bubbling / duplicate trigger
+    e.stopPropagation();
+  }}
+
                             style={{
                                 width: "100%",
                                 padding: "14px",
