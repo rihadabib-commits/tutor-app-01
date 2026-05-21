@@ -134,7 +134,7 @@ const TutorsClient = ({ teachers }) => {
         </div>
       )}
 
-    </div>
+    
   );
 };
 
