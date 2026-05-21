@@ -40,11 +40,51 @@
 // }
 
 
+// import { Geist, Geist_Mono } from "next/font/google";
+// import "./globals.css";
+// import Navber from "@/components/Navber";
+// import { Toaster } from "react-hot-toast";
+// import Footer from "@/components/Footer";
+
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+// export const metadata = {
+//   title: "MediQueue",
+//   description: "Tutor Booking System",
+// };
+
+// export default function RootLayout({ children }) {
+//   return (
+//     <html
+//       lang="en"
+//       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+//     >
+//       <body className="min-h-full flex flex-col" style={{ backgroundColor: "#f5f3ff", margin: 0, padding: 0 }}>
+//         <Navber />
+//         {children}
+//         <Footer />
+//         <Toaster />
+//       </body>
+//     </html>
+//   );
+// }
+
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navber from "@/components/Navber";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/Footer";
+import { Providers } from "@/components/providers";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,13 +105,16 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col" style={{ backgroundColor: "#f5f3ff", margin: 0, padding: 0 }}>
-        <Navber />
-        {children}
-        <Footer />
-        <Toaster />
+      <body className="min-h-full flex flex-col" style={{ margin: 0, padding: 0 }}>
+        <Providers>
+          <Navber />
+          {children}
+          <Footer />
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );
